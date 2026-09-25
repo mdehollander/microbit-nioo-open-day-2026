@@ -1,42 +1,54 @@
-input.onButtonPressed(Button.A, function () {
-	
-})
 basic.forever(function () {
-    serial.writeLine("===== COLOR SENSOR =====")
-    serial.writeLine("Red: " + TCS34725.red())
-    serial.writeLine("Green: " + TCS34725.green())
-    serial.writeLine("Blue:  " + TCS34725.blue())
+    serial.writeString("RGB:")
+    serial.writeString("" + TCS34725.red())
+    serial.writeString(",")
+    serial.writeString("" + TCS34725.green())
+    serial.writeString(",")
+    serial.writeString("" + TCS34725.blue())
     serial.writeLine("")
     basic.pause(1000)
     // Check for RED
-    // Check for GREEN
-    // Check for BLUE
-    // No recognizable color
     if (TCS34725.isColor(
     180,
     0,
     0,
     70
     )) {
-        basic.showString("R")
-        serial.writeString("\"RED\"")
+        basic.showString("A")
+        serial.writeString("DNA:" + "A")
+        serial.writeLine("")
     } else if (TCS34725.isColor(
     0,
     120,
     0,
     70
     )) {
+        // Check for GREEN
+        basic.showString("T")
+        serial.writeString("DNA:" + "T")
+        serial.writeLine("")
+    } else if (TCS34725.isColor(
+    0,
+    0,
+    120,
+    70
+    )) {
+        // Check for GREEN
         basic.showString("G")
-        serial.writeString("\"GREEN\"")
+        serial.writeString("DNA:" + "G")
+        serial.writeLine("")
     } else if (TCS34725.isColor(
-    0,
-    0,
     120,
+    120,
+    0,
     70
     )) {
-        basic.showString("B")
-        serial.writeString("\"BLUE\"")
+        // Check for GREEN
+        basic.showString("C")
+        serial.writeString("DNA:" + "C")
+        serial.writeLine("")
     } else {
+        // No recognizable color
         basic.showString("?")
     }
 })
