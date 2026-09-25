@@ -9,39 +9,39 @@ basic.forever(function () {
     basic.pause(1000)
     // Check for RED
     if (TCS34725.isColor(
-    180,
-    0,
-    0,
-    70
+    170,
+    70,
+    55,
+    25
     )) {
         basic.showString("A")
         serial.writeString("DNA:" + "A")
         serial.writeLine("")
     } else if (TCS34725.isColor(
-    0,
+    75,
     120,
-    0,
-    70
+    80,
+    25
     )) {
         // Check for GREEN
         basic.showString("T")
         serial.writeString("DNA:" + "T")
         serial.writeLine("")
     } else if (TCS34725.isColor(
-    0,
-    0,
-    120,
-    70
+    110,
+    105,
+    45,
+    25
     )) {
         // Check for GREEN
         basic.showString("G")
         serial.writeString("DNA:" + "G")
         serial.writeLine("")
     } else if (TCS34725.isColor(
-    120,
-    120,
-    0,
-    70
+    80,
+    100,
+    110,
+    25
     )) {
         // Check for GREEN
         basic.showString("C")
