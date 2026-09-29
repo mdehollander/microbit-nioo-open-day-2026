@@ -37,3 +37,7 @@ basic.forever(function() {
         . . . . .`);
 })
 ```
+
+```package
+tcs34725=github:sweig/pxt-tcs34725-fixed
+```
